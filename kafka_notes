@@ -1,0 +1,29 @@
+https://medium.com/@yzhong.cs/kafka-installation-step-by-step-guide-2a4c0449515e
+
+
+start zookeeper--------
+bin/zookeeper-server-start.sh config/zookeeper.properties &
+
+
+start kafka------------
+bin/kafka-server-start.sh config/server.properties &
+
+
+to list topics----------
+bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+
+
+'Event_Error','Prediction','Processing_completed','change_log_of_query','message','metadata_input','stateful_data_of_query'
+
+
+to view messages of any topic-----
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+
+
+
+to delete topics-----------
+bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic fooTopic
+
+
+
+https://blog.workwell.io/how-to-manage-your-kafka-consumers-from-the-producer-9933b88085dd
